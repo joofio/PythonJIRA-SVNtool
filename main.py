@@ -124,7 +124,7 @@ def process():
         change_list_final_body = []
         change_list_final_other = []
         for item in merged:
-
+            #for database informations
             if '.spc' in item[1] and item not in change_list_final_spec:
                 change_list_final_spec.append(item)
             elif '.bdy' in item[1] and item not in change_list_final_body:
@@ -149,7 +149,8 @@ def process():
     data_frame = pandas.DataFrame(
         {'body': change_list_final_body, 'spec': change_list_final_spec, 'other': change_list_final_other})
 
-    data_frame.to_excel('/svn_' + tag_main_issue + '.xlsx')
+    # Dataframe creation
+    # data_frame.to_excel('/svn_' + tag_main_issue + '.xlsx')
 
     message = '<h1> Your file is ready</h1> '
 
